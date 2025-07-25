@@ -66,14 +66,16 @@ make
 
 🚀 Run
 
+```bash
 ./so_long maps/map01.ber
+```
 
 ✅ Built With
-
+```bash
     gcc with -Wall -Wextra -Werror
 
     MiniLibX (Linux version)
 
     Tested on Unix-based systems (Ubuntu)
-
-Made with love and low-level memory management 🧠💾
+```
+Made during the 42 cursus 🧠💾
