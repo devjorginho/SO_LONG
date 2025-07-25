@@ -62,6 +62,7 @@ The `Makefile` expects the MiniLibX source code to be inside a folder named `min
 
 ```bash
 make
+```
 
 🚀 Run
 
