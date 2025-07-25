@@ -1,33 +1,19 @@
 # so_long
 
-A small 2D game written in **C** using the **MiniLibX** graphics library, developed as part of the 42 Lisboa curriculum.
+so_long is a simple 2D game project made with C and MiniLibX as part of the 42 curriculum.
 
-## 🎮 About the Game
+## 🚀 How to Run
 
-The goal is simple: collect all the collectibles (`C`) and reach the exit (`E`) without walking into walls (`1`).
+1. Clone this repository.
+2. Extract the `minilibx-linux` archive (if present) or clone it manually.
+3. Run `make` to compile the game.
+4. Start the game by running `./so_long [map_file.ber]`
 
-The game uses a side-view platform style with pixel-art graphics and real-time keyboard controls.
+Example:
 
-## 📦 Requirements
-
-Before compiling, make sure you **extract the `minilibx-linux` folder** from the archive if it's zipped (e.g., `minilibx-linux.zip`).
-
-The `Makefile` expects the MiniLibX source code to be inside a folder named `minilibx-linux/`.
-
-## 🧠 Features
-
-- Loads and validates `.ber` maps
-- Verifies map structure and path validity
-- Renders a tile-based world with textures
-- Handles keyboard input (`W`, `A`, `S`, `D`)
-- Detects collisions and movement restrictions
-- Tracks moves and prints them to the terminal
-- Gracefully exits the game
-
-## 🎮 Controls
-
-- `W`, `A`, `S`, `D` – Move the player
-- `ESC` – Quit the game
+```bash
+./so_long maps/map.ber
+```
 
 ## 📜 Map Rules
 
@@ -41,41 +27,23 @@ The `Makefile` expects the MiniLibX source code to be inside a folder named `min
 
 ### Example:
 
+```
 111111
 1P0C01
 1000E1
 111111
-
-
-## 🧱 Project Structure
-
-.
-├── src/ # Source code
-├── inc/ # Header files
-├── maps/ # .ber map files
-├── assets/ # Sprites and textures
-├── minilibx-linux/ # MiniLibX graphics library (must be extracted)
-├── Makefile
-└── README.md
-
-## 🛠️ Build
-
-```bash
-make
 ```
 
-🚀 Run
+## 🛠️ Dependencies
 
-```bash
-./so_long maps/map01.ber
-```
+- `minilibx-linux` (must be extracted before running `make`)
+- X11 libraries (Xext, X11, etc)
 
-✅ Built With
-```bash
-    gcc with -Wall -Wextra -Werror
+## 🎮 Controls
 
-    MiniLibX (Linux version)
+- `WASD` to move
+- Collect all items and reach the exit to win the game
 
-    Tested on Unix-based systems (Ubuntu)
-```
-Made during the 42 cursus 🧠💾
+## 🧠 Notes
+
+This project is part of the 42 school curriculum and is intended to teach basic graphics and game loop concepts using C.
