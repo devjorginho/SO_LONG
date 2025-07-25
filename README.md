@@ -4,6 +4,8 @@ so_long is a simple 2D game project made with C and MiniLibX as part of the 42 c
 
 ## 🚀 How to Run
 
+![Demo do projeto](demo.gif)
+
 1. Clone this repository.
 2. Extract the `minilibx-linux` archive (if present) or clone it manually.
 3. Run `make` to compile the game.
