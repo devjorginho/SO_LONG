@@ -6,7 +6,7 @@
 /*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:17:42 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/26 18:45:41 by jde-carv         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:09:17 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		is_map_valid(char **original_map);
 void	init_mlx_and_window(t_game *game);
 void	validate_game_map(t_game *game);
 int		free_for_all(t_game *game, char *error_msg);
+
 // Image functions
 void	load_xpm_to_image(t_game *game);
 void	draw_tile(t_game *game, char tile, int x, int y);
@@ -74,12 +75,13 @@ int		keyup(int keycode, t_game *game);
 
 // Utility functions
 void	putstr(char *s);
+char	*ft_itoa(int n);
 void	print_error_and_exit(char *message);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlen(char *s);
 char	*ft_strdup(char *s1);
-void	ft_putstr(char *s);
+void	ft_fputstr(int fd, char *s);
 
 #endif

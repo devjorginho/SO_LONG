@@ -1,13 +1,31 @@
 NAME	= so_long
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -Iinc -g -O3
+CFLAGS	= -Wall -Wextra -Werror -Iinc
 
 MLX_DIR	= ./minilibx-linux
 MLX_LIB	= $(MLX_DIR)/libmlx.a
 MLX_FLAGS = -lXext -lX11 -lm
 
-SRCS	= $(shell find ./src -name "*.c")
+SRCS	= ./src/check_map_functions/check_map_walls.c \
+		  ./src/check_map_functions/map_completability_checker.c \
+		  ./src/check_map_functions/map_elements_checker.c \
+		  ./src/check_map_functions/map_utils.c \
+		  ./src/check_map_functions/read_map.c \
+		  ./src/game_manager/game_update.c \
+		  ./src/game_manager/key_events_functions.c \
+		  ./src/game_manager/free_for_all.c \
+		  ./src/general_utils/error_messages.c \
+		  ./src/general_utils/get_next_line.c \
+		  ./src/general_utils/get_next_line_utils.c \
+		  ./src/general_utils/libft_utils.c \
+		  ./src/image_functions/draw_image.c \
+		  ./src/image_functions/load_images.c \
+		  ./src/main.c \
+		  ./src/setup_game/arguments_checker.c \
+		  ./src/setup_game/game_init.c \
+		  ./src/general_utils/libft_utils2.c
+
 OBJS	= $(SRCS:.c=.o)
 
 all: mlx $(NAME)

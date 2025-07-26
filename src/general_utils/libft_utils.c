@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:26:08 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 23:03:24 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 19:54:36 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-void	ft_putstr(char *s)
+void	ft_fputstr(int fd, char *s)
 {
 	ssize_t	ret;
 
 	if (!s || !*s)
 		return ;
 	while (*s)
-		ret = write(1, s++, 1);
+		ret = write(fd, s++, 1);
 	if (!ret)
 		return ;
 }

@@ -6,7 +6,7 @@
 /*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 19:03:54 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/26 18:47:24 by jde-carv         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:13:28 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ void	move_player(t_game *game, int keycode)
 	game->player->x = new_x;
 	game->player->y = new_y;
 	game->player->moves++;
-	ft_putstr("Moves: ");
+	ft_fputstr(1, "Moves: ");
 	ft_putnbr(game->player->moves);
-	ft_putstr("\n");
+	ft_fputstr(1, "\n");
 	if (game->game_over)
 	{
 		free_for_all(game, "You won !");

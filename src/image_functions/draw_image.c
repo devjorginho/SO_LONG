@@ -6,7 +6,7 @@
 /*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:50:27 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/26 17:32:25 by jde-carv         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:16:05 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	draw_tile(t_game *game, char object, int x, int y)
 {
+	if (game->player->x == x && game->player->y == y)
+		return ;
 	if (object == '1')
 		mlx_put_image_to_window(game->mlx, game->window, game->img->wall_img, x
 			* 32, y * 32);
@@ -72,6 +74,11 @@ void	draw_player(t_game *game)
 
 void	render_map(t_game *game)
 {
+	char *moves;
+
+	moves = ft_itoa(game->player->moves);
 	draw_map(game);
 	draw_player(game);
+	mlx_string_put(game->mlx, game->window, 10, 16, 0xFFFFFF, moves);
+	free (moves);
 }

@@ -6,7 +6,7 @@
 /*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:40:40 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/26 19:30:13 by jde-carv         ###   ########.fr       */
+/*   Updated: 2025/07/26 19:55:02 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,16 @@ char	**read_map(t_game *game, const char *map_path)
 
 void	validate_game_map(t_game *game)
 {
-	if (!check_map_rectangular(game))
+	if (!check_map_rectangular(game)
+		|| !check_map_arround(game)
+		|| !validate_map_elements(game)
+		|| !is_map_valid(game->map))
 	{
+		ft_fputstr(2, "Error\n");
 		free_map(game->map);
-		exit (0);
+		exit (1);
 	}
-	if (!check_map_arround(game))
-	{
-		free_map(game->map);
-		exit (0);
-	}
-	if (!validate_map_elements(game))
-	{
-		free_map(game->map);
-		exit (0);
-	}
-	if (!is_map_valid(game->map))
-	{
-		free_map(game->map);
-		exit (0);
-	}
-	ft_putstr("Map validated. Game started.");
+	ft_fputstr(1, "Map validated. Game started.");
 }
 
 void	create_window_with_map_size(t_game *game)
