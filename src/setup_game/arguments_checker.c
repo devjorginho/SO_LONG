@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arguments_checker.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 21:21:46 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 23:14:43 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 19:27:36 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,16 @@ void	validate_arguments_and_map(int argc, char **argv, t_game *game)
 		print_error_and_exit("Invalid arguments, map must end with .ber\n");
 	game->map = read_map(game, argv[1]);
 	if (!game->map)
+	{
+		free_map(game->map);
 		print_error_and_exit("Error: Failed to read map\n");
+	}
 	line_count = 0;
 	while (game->map[line_count])
 		line_count++;
 	if (line_count < 3)
+	{
+		free_map(game->map);
 		print_error_and_exit("Invalid map\n");
+	}
 }

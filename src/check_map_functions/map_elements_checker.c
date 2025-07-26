@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_elements_checker.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 10:49:09 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 22:30:04 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 19:31:48 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ int	check_player(t_game *game)
 int	validate_map_elements(t_game *game)
 {
 	if (!check_valid_chars(game))
-		print_error_and_exit("Invalid elements");
+		(free_map(game->map), print_error_and_exit("Invalid elements"));
 	if (!check_player(game))
-		print_error_and_exit("Invalid player");
+		(free_map(game->map), print_error_and_exit("Invalid player"));
 	if (!check_exit(game))
-		print_error_and_exit("Invalid exit");
+		(free_map(game->map), print_error_and_exit("Invalid exit"));
 	if (!check_collectables(game))
-		print_error_and_exit("Invalid collectables");
+		(free_map(game->map), print_error_and_exit("Invalid collectables"));
 	return (1);
 }

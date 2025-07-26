@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:17:42 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 23:09:53 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 18:45:41 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		validate_map_elements(t_game *game);
 int		is_map_valid(char **original_map);
 void	init_mlx_and_window(t_game *game);
 void	validate_game_map(t_game *game);
-
+int		free_for_all(t_game *game, char *error_msg);
 // Image functions
 void	load_xpm_to_image(t_game *game);
 void	draw_tile(t_game *game, char tile, int x, int y);

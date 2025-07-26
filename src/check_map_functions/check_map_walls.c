@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_walls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 09:59:46 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 22:15:13 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 19:10:07 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ int	check_map_rectangular(t_game *game)
 	{
 		line_len = (int)ft_strlen(game->map[i]);
 		if (line_len != len)
-		{
-			print_error_and_exit("Error: Map is not rectangular\n");
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -74,10 +71,7 @@ int	check_map_arround(t_game *game)
 	last_line--;
 	if (!check_side_walls(game->map[0])
 		|| !check_side_walls(game->map[last_line]))
-	{
-		print_error_and_exit("Error: The map is not surrounded by walls\n");
 		return (0);
-	}
 	if (!check_mid_walls(game->map))
 		return (0);
 	return (1);

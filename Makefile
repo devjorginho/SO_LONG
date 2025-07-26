@@ -30,4 +30,7 @@ fclean: clean
 
 re: fclean all
 
+val: 
+	valgrind --leak-check=full --show-leak-kinds=all ./so_long maps/map5.ber
+
 .PHONY: all clean fclean re mlx

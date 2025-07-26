@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 16:52:04 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 19:58:36 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 18:41:09 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_game
 	int			w;
 	int			h;
 	int			game_over;
+	int			line_count;
 	int			collects_to_win;
 	int			keymap[MAX_KEY_MAP];
 	char		**map;

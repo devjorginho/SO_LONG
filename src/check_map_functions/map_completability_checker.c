@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_completability_checker.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 12:44:43 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 22:24:33 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 18:51:42 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

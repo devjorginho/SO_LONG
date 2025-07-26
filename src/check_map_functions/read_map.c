@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:40:40 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/25 23:00:53 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/26 19:30:13 by jde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-int	count_map_lines(int fd)
+int	count_map_lines(t_game *game, int fd)
 {
 	int		count;
 	char	c;
@@ -30,6 +30,7 @@ int	count_map_lines(int fd)
 		if (line_ret < 0)
 			return (-1);
 	}
+	game->line_count = count;
 	return (count + 1);
 }
 
@@ -42,7 +43,7 @@ char	**read_map(t_game *game, const char *map_path)
 
 	i = 0;
 	fd = open(map_path, O_RDONLY);
-	game->map = ft_calloc(count_map_lines(fd) + 1, sizeof(char *));
+	game->map = ft_calloc(count_map_lines(game, fd) + 1, sizeof(char *));
 	if (!game->map)
 		return (NULL);
 	close(fd);
@@ -65,15 +66,24 @@ char	**read_map(t_game *game, const char *map_path)
 void	validate_game_map(t_game *game)
 {
 	if (!check_map_rectangular(game))
+	{
 		free_map(game->map);
+		exit (0);
+	}
 	if (!check_map_arround(game))
+	{
 		free_map(game->map);
+		exit (0);
+	}
 	if (!validate_map_elements(game))
+	{
 		free_map(game->map);
+		exit (0);
+	}
 	if (!is_map_valid(game->map))
 	{
 		free_map(game->map);
-		print_error_and_exit("Error: The map cannot be completed.\n");
+		exit (0);
 	}
 	ft_putstr("Map validated. Game started.");
 }
@@ -86,10 +96,13 @@ void	create_window_with_map_size(t_game *game)
 	int	window_height;
 
 	get_map_size(game, &map_width, &map_height);
-	window_width = map_width * 64;
-	window_height = map_height * 64;
+	window_width = map_width * 32;
+	window_height = map_height * 32;
 	game->window = mlx_new_window(game->mlx, window_width, window_height,
 			"so_long");
 	if (!game->window)
-		print_error_and_exit("Error: mlx_new_window failed\n");
+	{
+		free_for_all(game, NULL);
+		exit(0);
+	}
 }
