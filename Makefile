@@ -41,7 +41,6 @@ $(NAME): $(OBJS) $(MLX_LIB)
 
 clean:
 	rm -f $(OBJS)
-	@$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
