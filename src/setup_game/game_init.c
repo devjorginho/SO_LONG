@@ -6,7 +6,7 @@
 /*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 16:58:53 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/28 10:57:00 by devjorginho      ###   ########.fr       */
+/*   Updated: 2025/07/28 11:49:45 by devjorginho      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	init_mlx_and_window(t_game *game)
 	mlx_hook(game->window, 2, 1L << 0, keydown, game);
 	mlx_hook(game->window, 3, 1L << 1, keyup, game);
 	mlx_hook(game->window, 17, 0, close_game_with_x, game);
+	mlx_loop(game->mlx);
 }
 
 int	game_loop(t_game *game)
