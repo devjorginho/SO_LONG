@@ -18,16 +18,13 @@ so_long is a simple 2D game project developed using the MiniLibX library. The pl
    ```bash
    tar -xzf minilibx-linux.tgz
 
-
 2. Build the project:
    ```bash
    tar -xzf minilibx-linux.tgz
 
-
 3. Run the game with a valid map file:
    ```bash
    ./so_long maps/chose_your_map.ber
-
 
 Controls
 
