@@ -1,6 +1,6 @@
 # So_long 🎮
 
-![Game Preview](assets/so_long.gif)
+![Game Preview](so_long.gif)
 
 ## About ℹ️
 
