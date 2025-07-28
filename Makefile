@@ -1,7 +1,7 @@
 NAME	= so_long
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -Iinc
+CFLAGS	= -Wall -Wextra -Werror -Iinc -g
 
 MLX_DIR	= ./minilibx-linux
 MLX_LIB	= $(MLX_DIR)/libmlx.a

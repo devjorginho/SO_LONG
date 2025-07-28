@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jde-carv <jde-carv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: devjorginho <devjorginho@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:17:42 by devjorginho       #+#    #+#             */
-/*   Updated: 2025/07/26 20:09:17 by jde-carv         ###   ########.fr       */
+/*   Updated: 2025/07/28 10:52:28 by devjorginho      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int		collision_checker(t_game *game, int new_x, int new_y);
 // Key events functions
 int		keydown(int keycode, t_game *game);
 int		keyup(int keycode, t_game *game);
+int		close_game_with_x(t_game *game);
 
 // Utility functions
 void	putstr(char *s);
