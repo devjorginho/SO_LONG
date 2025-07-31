@@ -12,6 +12,25 @@
 
 #include "../../inc/so_long.h"
 
+void	count_collectibles(t_game *game)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	game->collects_to_win = 0;
+	while (game->map[y])
+	{
+		x = 0;
+		while (game->map[y][x])
+		{
+			if (game->map[y][x] == 'C')
+				game->collects_to_win++;
+			x++;
+		}
+		y++;
+	}
+}
 int	collision_checker(t_game *game, int new_x, int new_y)
 {
 	char	area;
@@ -71,25 +90,6 @@ void	move_player(t_game *game, int keycode)
 	{
 		free_for_all(game, "You won !");
 		exit(0);
-	}
-}
-void	count_collectibles(t_game *game)
-{
-	int	y;
-	int	x;
-
-	y = 0;
-	game->collects_to_win = 0;
-	while (game->map[y])
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			if (game->map[y][x] == 'C')
-				game->collects_to_win++;
-			x++;
-		}
-		y++;
 	}
 }
 
